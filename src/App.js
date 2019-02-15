@@ -88,44 +88,44 @@ class ItemDisplay extends Component {
   render() {
     return (
       <React.Fragment>
-      <h2>Items</h2>
+        <h2>Items</h2>
 
-      {(this.props.items.length === 0) ? (
-        // if list is empty:
-        "Add some items to get started."
-      ) : (
-        // if list is not empty:
-        this.props.items.map((item) => 
-          <div className={item.checked ? "item-checked" : "item"}
-            key={item.id}>
+        {(this.props.items.length === 0) ? (
+          // if list is empty:
+          "Add some items to get started."
+        ) : (
+          // if list is not empty:
+          this.props.items.map((item) => 
+            <div className={item.checked ? "item-checked" : "item"}
+              key={item.id}>
 
-            <input type="text" className={item.checked ? "item-text-checked" : "item-text"}
-              contentEditable={true} defaultValue={item.name}
-              onChange={(event) => {
-                // submit new item name and item index to function
-                this.props.updateItem(event.target.value, this.props.items.indexOf(item));
-              }} />
+              <input type="text" className={item.checked ? "item-text-checked" : "item-text"}
+                contentEditable={true} defaultValue={item.name}
+                onChange={(event) => {
+                  // submit new item name and item index to function
+                  this.props.updateItem(event.target.value, this.props.items.indexOf(item));
+                }} />
 
-            <div className="delete-button item-icon"
-              onClick={() => {
-                // submit item index to function
-                this.props.deleteItem(this.props.items.indexOf(item));
-              }}>
+              <div className="delete-button item-icon"
+                onClick={() => {
+                  // submit item index to function
+                  this.props.deleteItem(this.props.items.indexOf(item));
+                }}>
 
-              <img src={require("./delete.png")} alt="Check" width="18px" height="18px" />
+                <img src={require("./delete.png")} alt="Check" width="18px" height="18px" />
+              </div>
+
+              <div className="check-button item-icon"
+                onClick={() => {
+                  // submit item index to function
+                  this.props.checkItem(this.props.items.indexOf(item));
+                }}>
+
+                <img src={require("./checked.png")} alt="Check" width="18px" height="18px" />
+              </div>
             </div>
-
-            <div className="check-button item-icon"
-              onClick={() => {
-                // submit item index to function
-                this.props.checkItem(this.props.items.indexOf(item));
-              }}>
-
-              <img src={require("./checked.png")} alt="Check" width="18px" height="18px" />
-            </div>
-          </div>
-        )
-      )}
+          )
+        )}
       </React.Fragment>
     );
   }
