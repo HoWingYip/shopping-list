@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["react", "babel"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "rules": {
+      "no-console": "off",
+      "no-unused-vars": "off",
+      "quotes": ["warn", "double"],
+      "linebreak-style": ["error", "windows"],
+      "spaced-comment": ["warn", "always"],
+      "max-len": "off",
+      "comma-dangle": ["warn", {
+          "arrays": "never",
+          "objects": "always-multiline"
+      }],
+      "keyword-spacing": "warn",
+      "new-cap": "off",
+      "require-jsdoc": "off",
+      "semi": "warn",
+      "brace-style": "warn",
+      "padded-blocks": "off",
+      "prefer-const": "warn"
+  }
+}
