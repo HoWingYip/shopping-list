@@ -15,7 +15,7 @@ export default class App extends Component {
   }
 
   handleKeyPress(event) {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && event.target.value.trim() !== "") {
       // basically pushes new item to end of array
       // also trims the string for convenience's sake
       this.setState({items: [...this.state.items, {
