@@ -85,7 +85,7 @@ export default class App extends Component {
         </div>
         
         <footer id="credits">
-          Made by Ho Wing Yip (<a href="https://github.com/HoWingYip/">https://github.com/HoWingYip/</a>)
+          Made by Ho Wing Yip (<a href="https://github.com/HoWingYip/" target="_blank" rel="noopener noreferrer">https://github.com/HoWingYip/</a>)
         </footer>
       </div>
     );
