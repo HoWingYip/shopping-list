@@ -59,28 +59,34 @@ export default class App extends Component {
 
   render() {
     return (
-      <div id="app">
-        <h1>Shopping List</h1>
-        <input type="text" id="newItemEntry" rows="1" placeholder="Type and press Enter to insert."
-        onKeyPress={this.handleKeyPress} />
+      <div id="wrapper">
+        <div id="app">
+          <h1>Shopping List</h1>
+          <input type="text" id="newItemEntry" rows="1" placeholder="Type and press Enter to insert."
+          onKeyPress={this.handleKeyPress} />
 
-        <h2>Items</h2>
-        {this.state.items.length === 0 ? (
-          // if list is empty:
-          "Add some items to get started."
-        ) : (
-          // if list is not empty:
-          this.state.items.map((item) =>
-            <Item item={item} key={item.id} itemList={this.state.items}
-              checkItem={this.checkItem}
-              deleteItem={this.deleteItem}
-              updateItem={this.updateItem} />
-          )
-        )}
-    
-        {/* only displays clear button if there are items in list */}
-        {this.state.items.length > 0 &&
-        <div id="clear-items" onClick={this.clearItems}>Clear items</div>}
+          <h2>Items</h2>
+          {this.state.items.length === 0 ? (
+            // if list is empty:
+            "Add some items to get started."
+          ) : (
+            // if list is not empty:
+            this.state.items.map((item) =>
+              <Item item={item} key={item.id} itemList={this.state.items}
+                checkItem={this.checkItem}
+                deleteItem={this.deleteItem}
+                updateItem={this.updateItem} />
+            )
+          )}
+      
+          {/* only displays clear button if there are items in list */}
+          {this.state.items.length > 0 &&
+          <div id="clear-items" onClick={this.clearItems}>Clear items</div>}
+        </div>
+        
+        <footer id="credits">
+          Made by Ho Wing Yip (<a href="https://github.com/HoWingYip/">https://github.com/HoWingYip/</a>)
+        </footer>
       </div>
     );
   }
