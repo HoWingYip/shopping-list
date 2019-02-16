@@ -40,7 +40,7 @@ input {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 760px) {
   #app {
     width: 100%;
   }
