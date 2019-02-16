@@ -56,7 +56,12 @@ input {
   box-sizing: border-box;
 }
 
+#newItemEntry:focus {
+  outline: 0;
+}
+
 .item, .item-checked {
+  position: relative;
   width: 100%;
   padding: 10px 13px;
   margin-bottom: 10px;
@@ -66,12 +71,12 @@ input {
   box-sizing: border-box;
 }
 
-.item {
+.item, .item-text {
   background-color: #3e537b;
 }
 
-.item-checked {
-  background-color: grey;
+.item-checked, .item-text-checked {
+  background-color: rgb(90, 90, 90);
 }
 
 .item-text, .item-text-checked {
@@ -83,15 +88,6 @@ input {
   box-sizing: border-box;
 }
 
-.item-text {
-  background-color: #3e537b;
-}
-
-.item-text-checked {
-  background-color: grey;
-  text-decoration: line-through;
-}
-
 .item-text:focus {
   outline: 0;
 }
@@ -100,6 +96,11 @@ input {
   float: right;
   margin-right: 20px;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
 }
 
 .item-icon > img {
@@ -121,6 +122,20 @@ input {
 
 #clear-items:hover {
   background-color: rgb(194, 43, 43);
+}
+
+.strikethrough {
+  position: absolute;
+  display: flex;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  background-color: white;
+  /* let user click through this to activate select/delete buttons */
+  pointer-events: none;
 }
 
 code {

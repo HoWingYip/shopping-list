@@ -122,6 +122,9 @@ class Item extends Component {
 
           <img src={require("./checked.png")} alt="Check" width="18px" height="18px" />
         </div>
+        
+        {/* strikethrough if item is checked*/}
+        {this.props.item.checked && <div className="strikethrough" />}
       </div>
     );
   }
