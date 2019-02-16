@@ -127,9 +127,9 @@ input {
 .strikethrough {
   position: absolute;
   display: flex;
-  width: 96%;
-  margin-left: 2%;
-  margin-right: 2%;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
   top: 50%;
   left: 0;
   height: 1px;
